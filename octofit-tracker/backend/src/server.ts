@@ -1,6 +1,6 @@
 import express from 'express';
 import { connectDatabase } from './config/database.js';
-import { apiBaseUrl } from './config/api.js';
+import { apiBaseUrl, apiPort } from './config/api.js';
 import { usersRouter } from './routes/users.js';
 import { teamsRouter } from './routes/teams.js';
 import { activitiesRouter } from './routes/activities.js';
@@ -8,7 +8,7 @@ import { leaderboardRouter } from './routes/leaderboard.js';
 import { workoutsRouter } from './routes/workouts.js';
 
 const app = express();
-const port = Number(process.env.PORT) || 8000;
+const port = Number(process.env.PORT) || apiPort;
 
 app.use(express.json());
 
